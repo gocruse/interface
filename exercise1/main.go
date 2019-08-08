@@ -34,7 +34,7 @@ func main() {
 	}
 
 	MakeDial(nokia, "0822xxxxx")
-	MakeText(nokia, "o822xxxxx", "Hello World!")
+	MakeText(nokia, "0822xxxxx", "Hello World!")
 }
 
 func MakeDial(d Dialer, phoneNumber string) {
