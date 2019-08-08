@@ -7,6 +7,13 @@ type Mobile struct {
 	Brand string
 }
 
+func (m Mobile) Dial(phoneNumber string) string {
+	return fmt.Sprintf("dial made to %s", phoneNumber)
+}
+func (m Mobile) SendMessage(phoneNumber string, text string) string {
+	return fmt.Sprintf("text sent to %s. Message: [%s]", phoneNumber, text)
+}
+
 type Dialer interface {
 	Dial(phoneNumber string) string
 }
@@ -21,6 +28,13 @@ func main() {
 	// - Make a Dial -> Call the MakeDial function
 	// - Send a text message -> call the MakeText function
 
+	nokia := Mobile{
+		Brand: "Nokia",
+		Model: "N73",
+	}
+
+	MakeDial(nokia, "0822xxxxx")
+	MakeText(nokia, "o822xxxxx", "Hello World!")
 }
 
 func MakeDial(d Dialer, phoneNumber string) {
